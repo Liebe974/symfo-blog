@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HomeController!{% endblock %}
+
+{% block body %}
+<p>{{post.content}} - {{post.user.username}}</p>
+{% if app.user %}
+{{ form_start(form) }}
+{{ form_widget(form) }}
+{{ form_end(form) }}
+{% endif %}
+{% for c in allComments %}
+<p>{{c.content }} - {{c.user.username }} </p>
+{% endfor %}{% endblock %}
