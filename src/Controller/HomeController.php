@@ -27,6 +27,7 @@ class HomeController extends AbstractController
                 $post -> setUser($user);
                 $em ->persist($post);
                 $em ->flush();
+                return $this->redirectToRoute('app_home');
             }
             return $this->render('home/index.html.twig', [
                 'form' => $form,
@@ -53,6 +54,7 @@ class HomeController extends AbstractController
                 $comment -> setPost($post);
                 $em ->persist($comment);
                 $em ->flush();
+                return $this->redirectToRoute('app_post', ['id' => $id]);
             }
             return $this->render('home/post.html.twig', [
                 'form' => $form,
