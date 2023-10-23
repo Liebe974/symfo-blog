@@ -6,11 +6,6 @@
 
 body {
     font-family: sans-serif;
-    background:#a9a9a9;
-    background-position: center;
-    color: #fff;
-    line-height: 1.6;
-    min-height: 100vh;
 }
 
 .form {

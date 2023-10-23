@@ -3,13 +3,14 @@
 {% block title %}Blog{% endblock %}
 
 {% block body %}
-{% if app.user %}
-<div class="form">
-    {{ form_start(form) }}
-    {{ form_widget(form) }}
-    {{ form_end(form) }}
-</div>
-{% endif %}
-{% for p in allPosts %}
-<p>{{p.content }} - {{p.user.username }} - <a class="btn" href="{{ path('app_post', {id: p.id})}}">See all comments</a></p>
-{% endfor %}{% endblock %}
+    {% if app.user %}
+        <div class="form">
+            {{ form_start(form) }}
+            {{ form_widget(form) }}
+            {{ form_end(form) }}
+        </div>
+        {% endif %}
+        {% for p in allPosts %}
+        <p>{{p.content }} - {{p.user.username }} - <a class="btn" href="{{ path('app_post', {id: p.id})}}">See all comments</a></p>
+        {% endfor %}
+{% endblock %}
